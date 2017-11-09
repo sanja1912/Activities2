@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Activities2</string>
+    <string name="lion_title">LION</string>
+    <string name="shutter_title">SHUTTER ISLAND</string>
+    <string name="invisible_guest_title">INVISIBLE GUEST</string>
+    <string name="gone_girl_title">GONE GIRL</string>
+    <string name="titanic_title">TITANIC</string>
+
+    <string name="shutter_description">Shutter Island is a 2010 American neo-noir psychological thriller film directed by Martin Scorsese and written by Laeta Kalogridis, based on Dennis Lehane's 2003 novel of the same name. Leonardo DiCaprio stars as U.S. Marshal Edward "Teddy" Daniels who is investigating a psychiatric facility on Shutter Island after one of the patients goes missing. Mark Ruffalo plays his partner officer, Ben Kingsley is the facility's lead psychiatrist, and Michelle Williams is Daniels' wife. The film received generally favorable reviews from critics and grossed over $294 million at the box office"</string>
+    <string name="lion_description">Lion is a 2016 biographical film directed by Garth Davis (in his feature debut) and written by Luke Davies, based on the non-fiction book A Long Way Home by Saroo Brierley with Larry Buttrose. The film stars Dev Patel, Rooney Mara, David Wenham and Nicole Kidman.\n" +
+                "\n" +
+                "The film, which had its world premiere at the Toronto International Film Festival on 10 September 2016, was given a limited release in the United States on 25 November 2016, by the Weinstein Company before opening generally on 6 January 2017. It was released in Australia on 19 January 2017 and in the United Kingdom on 20 January 2017.\n" +
+                "\n" +
+                "Lion received six Oscar nominations at the 89th Academy Awards, including Best Picture, Best Supporting Actor (Patel), Best Supporting Actress (Kidman) and Best Adapted Screenplay. It won two BAFTA Awards for Best Supporting Actor (Patel) and Best Adapted Screenplay. The film was also commercially successful, becoming one of the highest-grossing Australian films of all time.
+</string>
+    <string name="invisible_guest_description">Contratiempo (English: Setback However, known as "The Invisible Guest") is a 2016 Spanish suspense film released theatrically on 6 January 2017. It is the second feature thriller by the director Oriol Paulo, following El Cuerpo (The Body, 2012).</string>
+    <string name="gone_girl_description">Gone Girl is a 2014 American psychological thriller film directed by David Fincher and written by Gillian Flynn, based on her 2012 novel of the same title. The film stars Ben Affleck, Rosamund Pike, Neil Patrick Harris, and Tyler Perry. Set in Missouri, the story begins as a mystery that follows the events surrounding Nick Dunne (Affleck), who becomes the primary suspect in the sudden disappearance of his wife, Amy (Pike).</string>
+    <string name="titanic_description">Titanic is a 1997 American epic romance-disaster film directed, written, co-produced and co-edited by James Cameron. A fictionalized account of the sinking of the RMS Titanic, it stars Leonardo DiCaprio and Kate Winslet as members of different social classes who fall in love aboard the ship during its ill-fated maiden voyage.
+" +
+                "\n" +
+                "Cameron's inspiration for the film came from his fascination with shipwrecks; he felt a love story interspersed with the human loss would be essential to convey the emotional impact of the disaster. Production began in 1995, when Cameron shot footage of the actual Titanic wreck. The modern scenes on the research vessel were shot on board the Akademik Mstislav Keldysh, which Cameron had used as a base when filming the wreck. Scale models, computer-generated imagery, and a reconstruction of the Titanic built at Playas de Rosarito in Baja California were used to re-create the sinking. The film was partially funded by Paramount Pictures and 20th Century Fox. It was the most expensive film ever made at the time, with a production budget of $200 million.</string>
+
+
+</resources>
