@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/Songs"
+    android:title="Songs"
+    android:icon="@drawable/ic_music_note_black_24dp"
+    >
+</item>
+
+    <item
+        android:id="@+id/movie"
+        android:title="Movie"
+        android:icon="@drawable/ic_movie_black_24dp"
+        >
+    </item>
+
+
+
+
+</menu>
