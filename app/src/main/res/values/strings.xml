@@ -41,5 +41,17 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string-array name="Songs">
+        <item>Havana-Camila Cabello</item>
+        <item>What about us-Pinl</item>
+        <item>Attention singer-Charlie Puth</item>
+        <item>Broken glass-Rachel Platten</item>
+        <item>Love so soft-Kelly Clarkson</item>
+        <item>If I am a lucky-Jason Derulo</item>
+        <item>Too good at goodbyes-Sam Smith</item>
+        <item>Wait-Martin Jensen</item>
+        <item>Alone-Jessie Ware</item>
+    </string-array>
+
 
 </resources>

@@ -17,45 +17,52 @@
     android:layout_height="match_parent"
     tools:context="com.example.dev7.activities2.MainActivity">
 
-    <Button
-        android:id="@+id/button_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go"
-       android:layout_below="@+id/my_toolbar"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:onClick="launchSecondActivity"
-
-        />
-    <Button
-        android:id="@+id/button_fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_main"
-        android:text="Fragment"
-        style="@style/Widget.AppCompat.Button.Colored"
-
-        />
-
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         >
 
     </android.support.v7.widget.Toolbar>
 
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_toolbar"
+        android:elevation="4dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        >
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tab_id"
+        >
+
+    </android.support.v4.view.ViewPager>
+
     <RelativeLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tab_id"
+
+        >
 
     </RelativeLayout>
+
+
 
 </RelativeLayout>
     
