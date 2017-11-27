@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,17 +23,24 @@ import java.util.GregorianCalendar;
 import java.net.URI;
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.List;
+
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.Fragment;
+
+import org.greenrobot.greendao.query.Query;
 
 public class FormPlaylist extends AppCompatActivity  {
     Button addSong;
     Toolbar toolbar;
     Button btnDate;
-
     int year;
     int month;
     int day;
+    private EditText songEdit;
+    private EditText singerEdit;
+    private SongDao songDao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +49,14 @@ public class FormPlaylist extends AppCompatActivity  {
         toolbar=findViewById(R.id.toolbar);
         addSong=findViewById(R.id.button2);
         btnDate=findViewById(R.id.btn_datePicker);
+        songEdit=findViewById(R.id.edit_text_song);
+        singerEdit=findViewById(R.id.edit_text_singer);
+
+        Song listOfSong = (Song) getIntent().getSerializableExtra("obj");
+        songEdit.setText(listOfSong.getName());
+        singerEdit.setText(listOfSong.getSinger());
+
+
         long date = System.currentTimeMillis();
         SimpleDateFormat sdf = new SimpleDateFormat("MMM  dd, yyyy h:mm a");
         String dateString = sdf.format(date);
@@ -66,8 +82,19 @@ public class FormPlaylist extends AppCompatActivity  {
         addSong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DaoSession daoSession=((App)getApplication()).getDaoSession();
+                songDao=daoSession.getSongDao();
+
+                Song song=new Song();
+                song.getId();
+                songDao.getKey(song);
+                song.setName(songEdit.getText().toString());
+                song.setSinger(singerEdit.getText().toString());
+                songDao.insert(song);
+
 
                 openDialog();
+
             }
         });
 
@@ -75,6 +102,8 @@ public class FormPlaylist extends AppCompatActivity  {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
+
+
 
 
     private void openDialog() {
@@ -92,11 +121,13 @@ public class FormPlaylist extends AppCompatActivity  {
             public void onClick(DialogInterface dialogInterface, int i) {
 
                 Toast.makeText(getApplicationContext(),"Song successfully saved",Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
         AlertDialog alert=builder.create();
         alert.show();
+
     }
 
 
