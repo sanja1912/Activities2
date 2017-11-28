@@ -2,6 +2,7 @@ package com.example.dev7.activities2;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,21 +12,29 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.greenrobot.greendao.query.Query;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class FormMovie extends AppCompatActivity {
     Button add;
     Toolbar toolbar;
     Button btnDate;
-    TextView tvDate;
     int year;
     int month;
     int day;
+    private MovieDao movieDao;
+    private EditText nameOfMovie;
+    private EditText description;
+    private Query<Movie>movieQuery;
+    private AdapterSong adapter;
 
 
     @Override
@@ -37,6 +46,16 @@ public class FormMovie extends AppCompatActivity {
         add=findViewById(R.id.button2);
 
         btnDate=findViewById(R.id.btn_datePicker);
+        nameOfMovie=findViewById(R.id.edit_text_movie);
+        description=findViewById(R.id.edit_text_description);
+
+        final Movie objMovie = (Movie) getIntent().getSerializableExtra("obj");
+        if(objMovie!=null) {
+            nameOfMovie.setText(objMovie.getName());
+            description.setText(objMovie.getDescription());
+        }
+
+
 
         long date = System.currentTimeMillis();
 
@@ -55,7 +74,7 @@ public class FormMovie extends AppCompatActivity {
                 DatePickerDialog pickerDialog=new DatePickerDialog(FormMovie.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                    
+
                     }
                 }, year, month, day);
                 pickerDialog.show();
@@ -67,8 +86,37 @@ public class FormMovie extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DaoSession daoSession=((App)getApplication()).getDaoSession();
+                movieDao=daoSession.getMovieDao();
 
+                if(objMovie==null){
+                    Movie movie=new Movie();
+                    movie.getId();
+                    movieDao.getKey(movie);
+                    movie.setName(nameOfMovie.getText().toString());
+                    movie.setDescription(description.getText().toString());
+                    movieDao.insert(movie);
+
+                }
+                if(objMovie==null){
+                    Movie movie=new Movie();
+                    movie.getId();
+                    movieDao.getKey(movie);
+                    movie.setName(nameOfMovie.getText().toString());
+                    movie.setDescription(description.getText().toString());
+                    movieDao.insert(movie);
+
+                } else{
+
+                    objMovie.setName(nameOfMovie.getText().toString());
+                    objMovie.setDescription(description.getText().toString());
+                    movieDao.update(objMovie);
+
+                }
                 openDialog();
+
+
+
 
             }
         });
@@ -79,6 +127,10 @@ public class FormMovie extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
     }
+
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -100,6 +152,7 @@ public class FormMovie extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Toast.makeText(getApplicationContext(),"Movie successfully saved",Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
@@ -113,5 +166,6 @@ public class FormMovie extends AppCompatActivity {
 
         AlertDialog alert=builder.create();
        alert.show();
+
     }
 }
